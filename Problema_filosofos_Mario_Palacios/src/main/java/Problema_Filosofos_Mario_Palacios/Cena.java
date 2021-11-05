@@ -1,10 +1,11 @@
 
 package Problema_Filosofos_Mario_Palacios;
 
-
 public class Cena {
-    
     public static void main(String [] args){
+        //Create Chairs
+        Silla silla = new Silla();
+        
         //Create Palillos
         Palillo[] palillos = new Palillo[5];
         
@@ -13,12 +14,12 @@ public class Cena {
         }
         
         //Create Philosophers
-        Filosofo[] filosofos =new Filosofo[5];
+        Filosofo[] filosofos = new Filosofo[5];
         
         for(int i=0; i<filosofos.length;i++){
-            filosofos[i]=new Filosofo(i, palillos[i], palillos[(i+1)%5]); 
+            filosofos[i] = new Filosofo(i, palillos[i], palillos[(i+1)%5],silla);
         }
-                
+        
         //Make the philosopher eat        
         for(int i=0;i<filosofos.length;i++){
             filosofos[i].start();
